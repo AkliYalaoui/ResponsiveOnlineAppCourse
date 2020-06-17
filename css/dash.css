@@ -1,0 +1,522 @@
+/****** global rules ****/
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*:focus,
+*:active {
+    border: none;
+    outline: none;
+}
+
+.container {
+    width: 98%;
+    height: 100vh;
+    margin: 0 1%;
+    position: relative;
+    overflow: auto;
+}
+
+/********** header   ************/
+header {
+    width: 100%;
+}
+
+nav {
+    width: 100%;
+    position: relative;
+    padding: 20px;
+}
+
+nav .nav-brand {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+}
+
+nav .nav-brand a {
+    color: rgba(4, 41, 79, 1);
+}
+
+nav .nav-toogle-menu {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    z-index: 2;
+    z-index: 1001;
+}
+
+nav .nav-toogle-menu * {
+    transition: transform 1.4s ease-in-out;
+}
+
+.slider-opened > span {
+    background-color: #fff !important;
+}
+
+.slider-opened > span > span {
+    background-color: transparent !important;
+}
+
+.slider-opened > span::after {
+    background-color: #fff !important;
+}
+
+nav .nav-toogle-menu > span {
+    position: relative;
+    height: 3px;
+    width: 30px;
+    background-color: rgba(4, 41, 79, 1);
+}
+
+nav .nav-toogle-menu > span > span {
+    position: absolute;
+    top: 0;
+    left: 4px;
+    height: 3px;
+    width: 4px;
+    background-color: #fff;
+}
+
+nav .nav-toogle-menu > span::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 0;
+    height: 3px;
+    width: 20px;
+    background-color: rgba(4, 41, 79, 1);
+}
+
+nav .nav-list {
+    list-style: none;
+    position: absolute;
+    top: 0px;
+    left: -50%;
+    width: 50%;
+    height: calc(100vh - 48px);
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: left 1.4s ease-in-out;
+    z-index: -1;
+}
+
+nav .nav-list .nav-item {
+    margin-bottom: 20px;
+}
+
+nav .nav-list .nav-item .nav-link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+}
+
+.open-nav-list {
+    left: 0% !important;
+    background-color: rgba(4, 41, 79, 1) !important;
+    z-index: 1000 !important;
+}
+
+.slider-opened > span {
+    background-color: #fff !important;
+    transform: rotate(45deg);
+}
+
+.slider-opened > span > span {
+    background-color: transparent !important;
+}
+
+.slider-opened > span::after {
+    background-color: #fff !important;
+    width: 30px !important;
+    transform: rotate(-90deg);
+}
+
+/***** main *******/
+main {
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/***** first section **********/
+main section:first-of-type h1 {
+    color: rgba(4, 41, 79, .9);
+    margin-left: 30px;
+}
+
+main section:first-of-type ul {
+    margin-top: 20px;
+    list-style: none;
+    display: flex;
+    width: 100%;
+}
+
+main section:first-of-type ul li {
+    padding: 10px;
+    border-radius: 8px;
+    width: calc(88%/3);
+    margin: 10px 2%;
+    text-align: center;
+}
+
+main section:first-of-type ul li:first-of-type {
+    background-color: rgba(154, 236, 219, .4);
+}
+
+main section:first-of-type ul li:nth-of-type(2) {
+    background-color: rgba(243, 166, 131, .4);
+}
+
+main section:first-of-type ul li:last-of-type {
+    background-color: rgba(255, 204, 204, .4);
+}
+
+main section:first-of-type ul li a {
+    text-decoration: none;
+    color: rgba(4, 41, 79, .9);
+}
+
+/***** second section **********/
+
+main section:nth-of-type(2) {
+    width: 100%;
+    height: 40px;
+    position: relative;
+    margin-top: 40px;
+    color: rgba(4, 41, 79, .9);
+    border: 1px solid #111;
+}
+
+main section:nth-of-type(2) h3 {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+
+}
+
+main section:nth-of-type(2) h5 {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    opacity: .5;
+    cursor: pointer;
+
+}
+
+main section:nth-of-type(2) h5::after {
+    content: '>';
+    margin-left: 7px;
+}
+
+/***** third section **********/
+
+main section:nth-of-type(3) {
+    width: 100%;
+    margin: 30px 10px 0;
+    display: flex;
+}
+
+main section:nth-of-type(3) .card {
+    width: 50%;
+    position: relative;
+    transform: scale(.8);
+    margin: 0 auto;
+    transition: all 2s ease-in-out;
+}
+
+main section:nth-of-type(3) .card img {
+    width: 100%;
+    height: 200px;
+}
+
+main section:nth-of-type(3) .card .overlay {
+    position: absolute;
+    top: 80%;
+    left: 10%;
+    background-color: #fff;
+    padding: 10px;
+}
+
+main section:nth-of-type(3).card .overlay .card-content {
+    background-color: #fff;
+    color: rgba(4, 41, 79, 1);
+    padding: 5px;
+    position: relative;
+}
+
+main section:nth-of-type(3) .card .overlay .card-content h6 {
+    color: rgba(4, 41, 79, .5);
+}
+
+main section:nth-of-type(3) .card .overlay .card-content::after {
+    content: '';
+    background-color: rgba(46, 134, 222, 1);
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    right: -27px;
+    z-index: 1;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+main section:nth-of-type(3) .card .overlay .card-content::before {
+    content: '';
+    background-color: #fff;
+    width: 20px;
+    height: 2px;
+    position: absolute;
+    bottom: 12px;
+    right: -20px;
+    border-radius: 6px;
+    z-index: 2;
+}
+
+main section:nth-of-type(3) .card .overlay .card-content > div {
+    height: 10px;
+    width: 10px;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    position: absolute;
+    bottom: 8px;
+    right: -20px;
+    z-index: 3;
+    transform: rotate(-45deg);
+}
+
+main section:nth-of-type(3) .card:hover {
+    transform: scale(1);
+}
+
+main section:last-of-type {
+    display: none;
+}
+
+/****** footer *******/
+footer {
+    width: 100%;
+    position: fixed;
+    height: 20px;
+    bottom: 30px;
+    left: 0;
+    box-shadow: 0 -3px 5px rgba(0, 0, 0, .3);
+    z-index: 1000;
+}
+
+footer > ul {
+    list-style: none;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+footer ul a:first-child {
+    color: rgba(4, 41, 79, 1);
+}
+
+footer ul lia a:not(:first-child) {
+    color: rgba(4, 41, 79, .1);
+}
+
+.footer-big-screen {
+    display: none;
+}
+
+
+/***** medium screens ***/
+
+@media screen and (min-width: 792px) {
+    nav .nav-toogle-menu {
+        display: none;
+    }
+
+    nav .nav-brand {
+        top: 150px;
+        right: 30px;
+    }
+
+    nav .nav-brand span {
+        font-size: 50px;
+    }
+
+    nav .nav-list {
+        left: 0%;
+        width: 100%;
+        height: 60px;
+        color: color: rgba(4, 41, 79, 1);
+        flex-direction: row;
+        justify-content: space-around;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+        transition: none;
+    }
+
+    nav .nav-list .nav-item {
+        margin: auto 0;
+    }
+
+    nav .nav-list .nav-item .nav-link {
+        color: rgba(4, 41, 79, 1);
+    }
+
+    main section:first-of-type h1 {
+        margin-top: 80px;
+    }
+
+    main section:nth-of-type(2) h5 {
+        top: 10px;
+        right: 30px;
+        opacity: .8;
+    }
+
+    main section:last-of-type {
+        display: block;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 100%;
+    }
+
+    main section:last-of-type > ul {
+        width: 50%;
+        margin: 0 auto;
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+        border-bottom: 2px solid rgba(4, 41, 79, .5);
+
+    }
+
+    main section:last-of-type > ul span {
+        color: rgba(4, 41, 79, 1);
+    }
+
+    /****** footer *******/
+    footer {
+        margin-top: 100px;
+        width: 100%;
+        background-color: rgba(4, 41, 79, 1);
+        position: relative;
+        height: auto;
+        box-shadow: none;
+    }
+
+    footer > ul {
+        display: none;
+    }
+
+    .footer-big-screen {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .contact {
+        display: flex;
+        flex-direction: column;
+        margin: 20px auto;
+        list-style: none;
+    }
+
+    .contact > li {
+        margin-bottom: 10px;
+    }
+
+    .contact > li > a {
+        text-decoration: none;
+        color: #fff !important;
+        font-size: 20px;
+    }
+
+    .expand {
+        width: 100px;
+        height: 40px;
+        margin:auto auto 20px;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: all 1s ease-in-out;
+    }
+    .expand:hover{
+        border-color: red;
+    }
+    .expand .next {
+        display: block;
+        height: 15px;
+        position: relative;
+        width: 15px;
+        border-right: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        transform: rotate(45deg);
+    }
+
+    .expand .next::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 50%;
+        height: 7px;
+        width: 7px;
+        border-right: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+    }
+    .form-expanded{
+        display: flex !important;
+    }
+    form {
+        display: none;
+        flex-direction: column;
+        margin: 20px auto;
+    }
+
+    form input {
+        outline: none;
+        border: none;
+        margin-bottom: 20px;
+        height: 30px;
+        width: 500px;
+        transition: all 1s ease-in-out;
+    }
+
+    form input:focus {
+        border-bottom: 2px solid red;
+    }
+
+    form textarea:focus {
+        border-bottom: 2px solid red;
+    }
+
+    form textarea {
+        outline: none;
+        border: none;
+        margin-bottom: 20px;
+        transition: all 1s ease-in-out;
+    }
+
+    form input[type='submit'] {
+        height: 30px;
+        width: 300px;
+        margin: 0 auto;
+        border-radius: 7px;
+        color: rgba(4, 41, 79, 1);
+    }
+}
